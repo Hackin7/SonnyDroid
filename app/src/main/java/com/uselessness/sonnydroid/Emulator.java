@@ -29,8 +29,7 @@ public class Emulator {
         if (emuThread == null){
             emuThread = new Thread(){
                 public void run(){
-                    rom = getRomBytes(0,0);
-                    nativeInit(rom);
+                    nativeInit(getRomBytes());
                 }
             };
             emuThread.start();
@@ -39,7 +38,6 @@ public class Emulator {
     public native void nativeInit(byte[] rom);
 
     // Open ROM ////////////////////////////////////////////////////////////////////////////////////
-    private byte[] rom;
     private Uri romUri;
     public void importRomUri(Uri u){romUri = u;}
     public byte[] getBytes(InputStream inputStream) throws IOException {
@@ -54,7 +52,7 @@ public class Emulator {
         return byteBuffer.toByteArray();
     }
     //Called from native function
-    public byte[] getRomBytes(int offset, int len_out) {
+    public byte[] getRomBytes() {
         try {
             InputStream inputStream = context.getContentResolver().openInputStream(romUri);
 

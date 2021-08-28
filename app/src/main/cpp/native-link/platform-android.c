@@ -125,10 +125,8 @@ void update_screen(void)
         u32 *s = screen + 320*y;
 
         for (x = 0; x < 320; x++) {
-            u32 c = *s++; //Colout of current pixel
-            //virt_screen[x][y]
-            //if (c != 0x00000000)
-                vscreen[320*y+x] = c;
+            u32 c = *s++; //Colour of current pixel
+            vscreen[320*y+x] = c;
         }
 
     }
@@ -144,12 +142,7 @@ void update_screen(void)
         intJavaArrayScreen = (*env)->NewIntArray(env,ARRAY_SIZE);
     }
     (*env)->SetIntArrayRegion(env, intJavaArrayScreen, 0, ARRAY_SIZE, vscreen);
-
     (*env)->CallVoidMethod(env, emulatorObj, mid, intJavaArrayScreen);
-    /*
-
-    jclass clazz = (*env)->FindClass(env, "com/uselessness/sonnydroid/Emulator");
-    */
 }
 u8 button_up;
 u8 button_down;
@@ -181,36 +174,6 @@ static char handle_debug_key(int key)
 	return 0;*/
 }
 
-static void handle_controller_key(int key, int down)
-{
-    /*
-	switch (key) {
-	case SDLK_UP: case 'j':
-		button_up = down;
-		break;
-	case SDLK_DOWN: case 'm':
-		button_down = down;
-		break;
-	case SDLK_LEFT: case 'n':
-		button_left = down;
-		break;
-	case SDLK_RIGHT: case ',':
-		button_right = down;
-		break;
-	case SDLK_SPACE: case 'h':
-		button_A = down;
-		break;
-	case 'b': case 'k':
-		button_B = down;
-		break;
-	case 'g':
-		button_C = down;
-		break;
-	case 'l':
-		button_menu = down;
-		break;
-	}*/
-}
 
 char update_controller(void)
 {
