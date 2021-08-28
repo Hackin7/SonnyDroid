@@ -1,0 +1,16 @@
+# A simple test for the minimal standard C++ library
+#
+
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := native-lib
+LOCAL_SRC_FILES := native-lib.c \
+ native-link/platform-android.c unununium/disas.c unununium/emu.c unununium/timer.c \
+ unununium/video.c unununium/render.c unununium/render-soft.c unununium/audio.c \
+ unununium/io.c unununium/i2c-bus.c unununium/i2c-eeprom.c unununium/board.c \
+ unununium/board-VII.c unununium/board-W60.c unununium/board-WAL.c unununium/board-BAT.c \
+ unununium/board-V_X.c unununium/board-dummy.c unununium/uuu-fileio.c
+LOCAL_LDLIBS    := -llog -landroid
+
+include $(BUILD_SHARED_LIBRARY)
