@@ -230,8 +230,8 @@ char update_controller(void)
     button_B = inputs[5];
     button_C = inputs[6];
     button_menu = inputs[7];
-    __android_log_print(ANDROID_LOG_ERROR, "SonnyDroid","Buttons: %i %i %i %i %i %i %i %i",
-                        inputs[0], inputs[1], inputs[2], inputs[3], inputs[4], inputs[5], inputs[6], inputs[7]);
+    //__android_log_print(ANDROID_LOG_ERROR, "SonnyDroid","Buttons: %i %i %i %i %i %i %i %i",
+    //                    inputs[0], inputs[1], inputs[2], inputs[3], inputs[4], inputs[5], inputs[6], inputs[7]);
 
     /*
 	SDL_Event event;

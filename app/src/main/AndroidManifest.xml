@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:largeHeap="true"
+        android:hardwareAccelerated="false"
         android:theme="@style/Theme.SonnyDroid">
         
         <activity android:name=".MainActivity">
