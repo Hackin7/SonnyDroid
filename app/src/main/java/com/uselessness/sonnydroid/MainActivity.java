@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         emulator = new Emulator(MainActivity.this, screenView);
 
         setInputs();
-        screenData();
         openFile();
 
     }
@@ -58,10 +57,6 @@ public class MainActivity extends AppCompatActivity {
         screenView.pause();
     }
 
-    public void setScreen(int[] screen){
-        screenView.screen = screen;
-        Log.d("V", "Screen Value: " + String.valueOf(screen[0]));
-    }
 
     //// Importing ROM /////////////////////////////////////////////////////////////////////////////////
     // https://stackoverflow.com/questions/30789116/implementing-a-file-picker-in-android-and-copying-the-selected-file-to-another-l
@@ -76,26 +71,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode != REQUEST_CODE || resultCode != RESULT_OK) { return; }
-        importFile(data.getData());
-    }
-    public void importFile(Uri uri) {
-        try {
-            InputStream iStream = getContentResolver().openInputStream(uri);
-            emulator.start(getBytes(iStream));
-        }catch (FileNotFoundException ex) {alert("File Not Found");}
-        catch (IOException ex) {alert("IOException");}
-    }
-
-    public byte[] getBytes(InputStream inputStream) throws IOException {
-        ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
-        int bufferSize = 1024;
-        byte[] buffer = new byte[bufferSize];
-
-        int len = 0;
-        while ((len = inputStream.read(buffer)) != -1) {
-            byteBuffer.write(buffer, 0, len);
-        }
-        return byteBuffer.toByteArray();
+        emulator.importRomUri(data.getData());
+        emulator.start();
     }
     //// Others ////////////////////////////////////////////////////////////////////////////////////
     public void alert(String message){
@@ -104,9 +81,6 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog dialog = s.create();
         dialog.show();
     }
-
-    public native void screenData();
-
 
     public void setInputs(){
         int[] buttonIds = {

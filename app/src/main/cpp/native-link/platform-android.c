@@ -115,13 +115,10 @@ void render_palette(void)
 
 }
 
+int ARRAY_SIZE = 320 * 240;
+jintArray intJavaArrayScreen;
 void update_screen(void)
 {
-    //printf("Update Screen");
-
-    //u32 pitch = 100;//sdl_surface->pitch / 4;
-    //u32 *pixels
-
     u32 x, y, j;
     for (y = 0; y < 240; y++) {
         /*u32 *p = pixels + PIXEL_SIZE*y*pitch;*/
@@ -137,15 +134,22 @@ void update_screen(void)
     }
 
     // Call screen update function
+
     JNIEnv* env;
     (*g_jvm)->AttachCurrentThread(g_jvm, &env, NULL); // check error etc
-    int ARRAY_SIZE = 320 * 240;
-    jintArray intJavaArray = (*env)->NewIntArray(env,ARRAY_SIZE);
-    (*env)->SetIntArrayRegion(env, intJavaArray, 0, ARRAY_SIZE, vscreen);
-
     jclass clazz = (*env)->FindClass(env, "com/uselessness/sonnydroid/Emulator");
     jmethodID mid = (*env)->GetMethodID(env,clazz, "updateScreenView", "([I)V");
-    (*env)->CallVoidMethod(env, emulatorObj, mid, intJavaArray);
+
+    if (intJavaArrayScreen == NULL){
+        intJavaArrayScreen = (*env)->NewIntArray(env,ARRAY_SIZE);
+    }
+    (*env)->SetIntArrayRegion(env, intJavaArrayScreen, 0, ARRAY_SIZE, vscreen);
+
+    (*env)->CallVoidMethod(env, emulatorObj, mid, intJavaArrayScreen);
+    /*
+
+    jclass clazz = (*env)->FindClass(env, "com/uselessness/sonnydroid/Emulator");
+    */
 }
 u8 button_up;
 u8 button_down;
@@ -302,6 +306,7 @@ void fatal(const char *format, ...)
     va_start(ap, format);
     vfprintf(stderr, format, ap);
     __android_log_print(ANDROID_LOG_ERROR, "SonnyDroid","%s", format);
+
     //exit(1);
 }
 

@@ -23,7 +23,7 @@ public class ScreenView extends SurfaceView implements Runnable{
 
     private int w = 320;
     private int h = 240;
-    public int[] screen;
+    private int[] screen;
 
     public ScreenView(Context context) {
         this(context, null);
@@ -55,7 +55,6 @@ public class ScreenView extends SurfaceView implements Runnable{
             draw();
         }
     }
-
     private void draw(){
 
         if(getHolder().getSurface().isValid()) {
@@ -70,6 +69,12 @@ public class ScreenView extends SurfaceView implements Runnable{
         }
     }
 
+    public void setScreen(int[] screen) {
+        System.arraycopy(screen, 0, this.screen, 0,w*h);
+    }
+    public void setScreenPixel(int index, int pixel){
+        screen[index] = pixel;
+    }
 
     public void resume() {
         running = true;
