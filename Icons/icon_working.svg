@@ -7,7 +7,7 @@
    viewBox="0 0 110 100"
    version="1.1"
    id="svg5"
-   sodipodi:docname="banner.svg"
+   sodipodi:docname="icon_working.svg"
    inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -23,13 +23,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.32819258"
-     inkscape:cx="124.92665"
-     inkscape:cy="307.74614"
-     inkscape:window-width="942"
-     inkscape:window-height="691"
-     inkscape:window-x="685"
-     inkscape:window-y="36"
+     inkscape:zoom="0.4641344"
+     inkscape:cx="273.62764"
+     inkscape:cy="372.73686"
+     inkscape:window-width="1366"
+     inkscape:window-height="699"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      inkscape:snap-nodes="false"
@@ -41,47 +41,21 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#b3e5fc;fill-opacity:1;stroke-width:0.265053"
+       style="fill:#b3e5fc;fill-opacity:1;stroke-width:0.180346"
        id="rect712"
-       width="220.15518"
-       height="107.76503"
-       x="0.76543605"
-       y="-7.5624828"
-       ry="5.6486993"
-       inkscape:export-filename="/tmp/banner.png"
-       inkscape:export-xdpi="117.95131"
-       inkscape:export-ydpi="117.95131" />
+       width="110.19893"
+       height="99.672913"
+       x="0.58493358"
+       y="0.53017735"
+       ry="5.2245364" />
     <rect
-       style="fill:#73ff73;fill-opacity:1;stroke-width:0.115027"
+       style="fill:#73ff73;fill-opacity:1;stroke-width:0.082081"
        id="rect712-7"
-       width="219.48865"
-       height="20.357958"
+       width="110.19893"
+       height="20.646627"
        x="0.40929252"
-       y="79.852272"
-       ry="1.0670995"
-       inkscape:export-filename="/tmp/banner.png"
-       inkscape:export-xdpi="117.95131"
-       inkscape:export-ydpi="117.95131" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:29.5366px;line-height:1.25;font-family:sans-serif;fill:#803300;fill-opacity:1;stroke:none;stroke-width:0.738413"
-       x="108.98212"
-       y="31.414932"
-       id="text14063"
-       transform="scale(1.0027205,0.99728691)"
-       inkscape:export-filename="/tmp/banner.png"
-       inkscape:export-xdpi="117.95131"
-       inkscape:export-ydpi="117.95131"><tspan
-         sodipodi:role="line"
-         id="tspan14061"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:29.5366px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#803300;stroke-width:0.738413"
-         x="108.98212"
-         y="31.414932">Sonny</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:29.5366px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#803300;stroke-width:0.738413"
-         x="108.98212"
-         y="68.335632"
-         id="tspan25837">Droid</tspan></text>
+       y="79.564262"
+       ry="1.0822304" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -89,17 +63,11 @@
      inkscape:label="Layer 2">
     <path
        id="path231"
-       style="fill:#ff8f00;fill-opacity:1;stroke-width:0.265453"
-       d="M 55.656796,48.669446 A 33.824362,34.047089 0 0 0 21.832505,82.716466 33.824362,34.047089 0 0 0 26.716444,100.3106 H 84.597148 A 33.824362,34.047089 0 0 0 89.481089,82.716466 33.824362,34.047089 0 0 0 55.656796,48.669446 Z"
-       inkscape:export-filename="/tmp/rect712.png"
-       inkscape:export-xdpi="118.01204"
-       inkscape:export-ydpi="118.01204" />
+       style="fill:#ff8f00;fill-opacity:1;stroke-width:0.264583"
+       d="M 55.656796,49.007269 A 33.824362,33.824362 0 0 0 21.832505,82.831562 33.824362,33.824362 0 0 0 26.716444,100.3106 H 84.597148 A 33.824362,33.824362 0 0 0 89.481089,82.831562 33.824362,33.824362 0 0 0 55.656796,49.007269 Z" />
     <g
        id="g824"
-       transform="matrix(1,0,0,1.0065848,-4.3064677,-64.80709)"
-       inkscape:export-filename="/tmp/rect712.png"
-       inkscape:export-xdpi="118.01204"
-       inkscape:export-ydpi="118.01204">
+       transform="translate(-4.3064677,-63.726933)">
       <rect
          style="fill:#ff8f00;fill-opacity:1;stroke-width:0.228716"
          id="rect359"

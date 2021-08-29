@@ -41,7 +41,7 @@ JNIEXPORT void JNICALL Java_com_uselessness_sonnydroid_Emulator_nativeInit(JNIEn
     //memcpy(rom_data, java_rom_data, size);
 
 
-    screenTest();
+    //screenTest();
     //__android_log_print(ANDROID_LOG_ERROR, "SonnyDroid","%s", "Starting");
     emu();
 }

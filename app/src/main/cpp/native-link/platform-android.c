@@ -96,7 +96,17 @@ static inline u8 x58(u32 x)
 
 u32 get_colour(u8 r, u8 g, u8 b)
 {
-    return 256*256*r + 256*g + b;//SDL_MapRGB(sdl_surface->format, r, g, b);
+    //return ((r << 10)) | ((g << 5))| (b & 31);
+
+    //Arithmetic
+    //return 256*256*256*0xff + 256*256*r + 256*g + b;//SDL_MapRGB(sdl_surface->format, r, g, b);
+    //return 256*256*r + 256*g + b;//SDL_MapRGB(sdl_surface->format, r, g, b);
+
+    //return 0xff << 24 | r <<16 | g << 8 | b;//SDL_MapRGB(sdl_surface->format, r, g, b);
+    return r <<16 | g << 8 | b;
+    //return r <<16 | g << 8 | b;
+
+    //SDL_MapRGB(sdl_surface->format, r, g, b);
 }
 
 void render_palette(void)
@@ -122,11 +132,13 @@ void update_screen(void)
     u32 x, y, j;
     for (y = 0; y < 240; y++) {
         /*u32 *p = pixels + PIXEL_SIZE*y*pitch;*/
-        u32 *s = screen + 320*y;
+        //u32 *s = screen + 320*y;
 
         for (x = 0; x < 320; x++) {
-            u32 c = *s++; //Colour of current pixel
-            vscreen[320*y+x] = c;
+            //u32 c = *s++; //Colour of current pixel
+            //if (screen[320*y+x] != 0x00000000)
+            //if ((screen[320*y+x]>>24 & 0xFF) != 0x00)
+            vscreen[320*y+x] = screen[320*y+x];//c;
         }
 
     }

@@ -60,7 +60,7 @@ public class ScreenView extends SurfaceView implements Runnable{
         if(getHolder().getSurface().isValid()) {
             Canvas canvas = getHolder().lockCanvas();
 
-            canvas.drawColor(Color.argb(255, 155, 0, 0));
+            //canvas.drawColor(Color.argb(255, 155, 0, 0));
 
             getHolder().setFixedSize(w, h);
             canvas.drawBitmap(screen, 0, w, 0, 0, w, h, false, null);
